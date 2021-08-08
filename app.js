@@ -25,7 +25,7 @@ app.get("/", function(req, res) {
        const icon = json.weather[0].icon;
        const imageUrl = "http://openweathermap.org/img/wn/" +icon+ "@2x.png";
 
-       res.write("<h1>The tempreture currently in " +query+ " is " + tempreture + " degree celcious.</h1>");
+       res.write("<h1>The temperature currently in " +query+ " is " + tempreture + " degree celcius.</h1>");
        res.write("<h1>The weather status is currently " + des + "</h1>");
        res.write("<img src=" + imageUrl+ ">");
        res.send();
@@ -33,6 +33,6 @@ app.get("/", function(req, res) {
   });
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("checking the weather");
 });
